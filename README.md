@@ -2,11 +2,11 @@
 
 https://teamscottie-lease.invisionapp.com/freehand/server-deployment-practice-kbYRmJoCe
 
-HTTP server deployed on Heroku.
+HTTP server deployed on Heroku: https://scott-server-deploy-prod.herokuapp.com/
 
-PR to dev branch:
+PR to dev branch: https://github.com/scottie-l/server-deployment-practice/pull/1
 
-Deployment URL to prod:
+Deployment URL to prod: https://scott-server-deploy-prod.herokuapp.com/
 
 ### Installation:
 to install run: `git clone git@github.com:scottie-l/server-deployment-practice.git`
