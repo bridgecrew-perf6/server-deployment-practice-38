@@ -13,6 +13,3 @@ describe('Testing my HTTP server', () => {
     expect(response.body[0].text).toEqual('test');
   });
 });
-
-
-// a small change

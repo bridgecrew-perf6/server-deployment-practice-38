@@ -19,7 +19,7 @@ app.get('/message', (req, res) => {
 // create a message and send it back
   console.log('Someone sent a request! ' + req.method);
   res.send(messages);
-}); // this method functio modifies our singleton
+}); // this method function modifies our singleton
 
 function createMessage(req, res, next) {
   const messageText = req.query.text;
@@ -36,15 +36,8 @@ function saveMessage(req, res, next) {
   next();
 }
 
-// POST http://localhost:300/message?text=someString&author=Jacob
+// POST http://localhost:3000/message?text=someString&author=Name
 app.post('/message', createMessage, saveMessage, (req, res, next) => {
-// create a message and send it back?
-//   const messageText = req.query.text;
-//   const authorName = req.query.author;
-
-  //   next('an error has occured'); //error handling for server
-  //   const message = new Message(messageText, authorName);
-  //   MessageChannel.push(message);
   res.send(messages);
 });
 
@@ -52,13 +45,10 @@ app.use(function (err, req, res, next) {
   res.send('Error Handler hit!');
 });
 
-
 // only runs when no other functio can from handlers above
 app.use(function (req, res) {
   res.status(404).send('Nothing Found');
 });
-
-// module.exports = app;
 
 module.exports = {
   start: function (port) {
