@@ -15,8 +15,7 @@ class Message {
 }
 
 // needs 2 things: a route(string) and a Callback function - tells the route to do, using 2 params: req and res
-app.get('/message', (req, res) => {
-// create a message and send it back
+app.get('/message', (req, res) => { // create a message and send it back
   console.log('Someone sent a request! ' + req.method);
   res.send(messages);
 }); // this method function modifies our singleton

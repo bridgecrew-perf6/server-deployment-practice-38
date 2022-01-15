@@ -2,14 +2,15 @@
 
 const server = require('../app.js');
 const supertest = require('supertest');
-const request = supertest(server.app);
+// const require = supertest(server.app);
 
 describe('Testing my HTTP server', () => {
 
-  it('Should be able to reponse to a POST to /message', async () => {
-    let response = await request.post('/message?text=test&author=test');
+  it('Should be able to reponsd to a POST to /message', async () => {
+    let res = await req.post('/message?text=test&author=test');
 
-    expect(response.status).toEqual(200);
-    expect(response.body[0].text).toEqual('test');
+    expect(res.status).toEqual(200);
+    console.log(res.body);
+    expect(res.body[0].text).toEqual('test');
   });
 });
