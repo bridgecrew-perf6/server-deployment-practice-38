@@ -7,6 +7,7 @@ const express = require('express');
 const app = express();
 
 const messages = [];
+
 class Message {
   constructor(text, author) {
     this.text = text;
@@ -25,7 +26,7 @@ function createMessage(req, res, next) {
   const messageText = req.query.text;
   const authorName = req.query.author;
   console.log('First message is created');
-  if (!messageText || authorName {
+  if (!messageText || authorName) {
     next('No text or Author');
   } else {
     const message = new Message(messageText, authorName);
@@ -33,16 +34,16 @@ function createMessage(req, res, next) {
     req.message = message;
     next();
   }
- }
+}
 
 function saveMessage(req, res, next) {
-  console.log('Can see any data htat was added to the request', req.message);
+  console.log('Can see any data that was added to the request', req.message);
   let message = req.message;
   messages.push(message);
   next();
 }
 
-// POST http://localhost:300/message?text=someString&author=Jacob
+// POST http://localhost:3000/message?text=someString&author=Jacob
 app.post('/message', createMessage, saveMessage, (req, res, next) => {
 // create a message and send it back?
   res.send(messages);
