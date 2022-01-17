@@ -2,7 +2,7 @@
 
 const server = require('../app.js');
 const supertest = require('supertest');
-// const require = supertest(server.app);
+const req = supertest(server.app);
 
 describe('Testing my HTTP server', () => {
 
